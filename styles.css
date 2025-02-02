@@ -1,1 +1,46 @@
-/*  your css code here. If applicable */
+body{
+	text-align:center;
+}
+.circle-container{
+	display:flex;
+	justify-content:space-between;
+	width:300px;
+	margin-left:225px;
+}
+.circle{
+    padding-top: 6px;
+    border: 5px solid rgb(186, 184, 184);
+    border-radius: 35px;
+    height: 26px;
+    text-align: center;
+    width: 30px;
+}
+.btn-con{
+    margin-top: 20px;
+}
+.btn{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px;
+    color: white;
+    background-color: rgb(8, 154, 245);
+    border: none;
+    border-radius: 5px;
+}
+.btn:hover{
+    background-color: rgb(18, 139, 214);
+}
+.btn:active{
+    background-color: rgb(16, 87, 130);
+}
+#prev{
+    margin-right: 5px;
+}
+#next{
+    margin-left: 5px;
+}
+.circle.active{
+    border-color: rgb(8, 154, 245);
+}
