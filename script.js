@@ -1,30 +1,33 @@
-//your JS code here. If required.
 const circles = document.querySelectorAll('.circle');
-        const prev = document.getElementById('previous');
+        const prev = document.getElementById('prev');
         const next = document.getElementById('next');
         let currentIndex = 0;
-        function updateProgress(){
-            circles.forEach((circle,index)=>{
+
+        function updateProgress() {
+            circles.forEach((circle, index) => {
                 circle.classList.remove('active');
 
-                if(index <= currentIndex){
+                if (index <= currentIndex) {
                     circle.classList.add('active');
                 }
             });
-            prev.disabled = currentIndex === 0;
-            next.disabled = currentIndex === circles.length - 1;
+
+            prev.disabled = currentIndex === 0; // Disable Prev if at first circle
+            next.disabled = currentIndex === circles.length - 1; // Disable Next if at last circle
         }
 
-        next.addEventListener('click',()=>{
-            if(currentIndex < circles.length -1){
+        next.addEventListener('click', () => {
+            if (currentIndex < circles.length - 1) {
                 currentIndex++;
+                updateProgress();
             }
-            updateProgress();
         });
-        prev.addEventListener('click',()=>{
-            if(currentIndex >0){
+
+        prev.addEventListener('click', () => {
+            if (currentIndex > 0) {
                 currentIndex--;
+                updateProgress();
             }
-            updateProgress();
-        })
-        updateProgress();
+        });
+
+        updateProgress(); // Initialize the state
